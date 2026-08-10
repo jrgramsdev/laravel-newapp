@@ -80,7 +80,10 @@
 
             {{-- Footer --}}
             <footer class="flex flex-col items-center justify-between gap-4 border-t border-ink/10 py-8 text-sm text-ink/60 sm:flex-row dark:border-white/10 dark:text-white/60">
-                <p>&copy; {{ date('Y') }} {{ config('app.name', 'Laravel') }}. Built with Laravel &amp; Boost.</p>
+                <p>
+                    &copy; {{ date('Y') }} {{ config('app.name', 'Laravel') }}. Built with Laravel &amp; Boost.
+                    <a href="{{ route('admin.index') }}" class="ml-2 transition hover:text-brand">Admin</a>
+                </p>
                 <div class="flex items-center gap-2">
                     <span class="size-3 rounded-full bg-white ring-1 ring-ink/20"></span>
                     <span class="size-3 rounded-full bg-brand"></span>

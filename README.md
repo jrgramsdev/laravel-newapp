@@ -15,10 +15,37 @@ for free.
 ## What this demonstrates
 
 - Standing up a **Laravel 13** app from scratch (no Breeze/Jetstream scaffolding).
+- A **validated contact form** — Form Request validation, Eloquent persistence, and the
+  Post/Redirect/Get pattern with flash messaging.
+- **Session authentication** hand-rolled (no starter kit): login/logout, throttled attempts,
+  and a **protected admin dashboard** that lists submissions with pagination.
+- **Feature tests** covering the happy paths and the failure modes (validation, auth guards).
 - **Tailwind CSS v4** with a CSS-first `@theme` design-token workflow and dark-mode support.
 - A production-minded **Docker** build and a one-click **Render** deployment blueprint.
 - A tidy developer experience: single-command dev server, a `push.sh` helper, and
   **Laravel Boost** guidelines/skills committed for consistent AI-assisted iteration.
+
+## Features
+
+| Page              | Route            | What it does                                             |
+| ----------------- | ---------------- | ------------------------------------------------------- |
+| Landing           | `/`              | Branded white/green/black home page                     |
+| Contact           | `/contact`       | Validated form that saves messages to the database      |
+| Login             | `/login`         | Session auth (throttled) guarding the admin area        |
+| Admin dashboard   | `/admin`         | Auth-only list of contact submissions, paginated        |
+
+### Admin login (demo)
+
+The `/admin` dashboard is protected. A demo admin is seeded from environment variables
+(defaults shown — override them for any real deployment):
+
+```
+Email:    admin@example.com
+Password: password
+```
+
+Configure via `ADMIN_EMAIL` / `ADMIN_PASSWORD` (see `.env.example`). The account is seeded
+idempotently, so it's recreated on each deploy even where the database is ephemeral.
 
 ## Tech stack
 
