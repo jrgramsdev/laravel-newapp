@@ -1,0 +1,26 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploys the Laravel app as a free Docker web service.
+services:
+  - type: web
+    name: laravel-newapp
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        # Generate once (`php artisan key:generate --show`) and paste it in the
+        # Render dashboard for stable sessions. If left unset, the container
+        # generates a fresh key on each boot — fine for a demo.
+        sync: false
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: SESSION_DRIVER
+        value: database
+      - key: LOG_CHANNEL
+        value: stderr
