@@ -5,11 +5,8 @@ theme and wired up with [Laravel Boost](https://laravel.com/docs/boost) for AI-a
 development. Built on **PHP 8.4**, **Tailwind CSS v4**, and **SQLite**, and packaged to deploy
 for free.
 
-**▶ Live demo:** _replace with your URL, e.g._ `https://laravel-newapp-xxxx.onrender.com`
+**▶ Live demo: [laravel-newapp.onrender.com](https://laravel-newapp.onrender.com/)**
 &nbsp;·&nbsp; **Deploy your own:** [DEPLOYMENT.md](DEPLOYMENT.md)
-
-> ℹ️ Once you deploy on Render (see below), paste the URL above so reviewers can open the
-> running app in one click.
 
 ![Landing page — white/green/black theme](docs/screenshot.png)
 
