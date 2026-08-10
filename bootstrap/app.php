@@ -12,7 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Trust the platform's load balancer (Render/Fly/Heroku/etc.) so Laravel
+        // honors X-Forwarded-Proto and generates correct https:// asset URLs
+        // instead of http://, which the browser would block as mixed content.
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
