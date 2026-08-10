@@ -20,9 +20,9 @@
                 <nav class="flex items-center gap-6 text-sm font-medium">
                     <a href="https://laravel.com/docs" class="hidden text-ink/70 transition hover:text-brand sm:inline dark:text-white/70">Docs</a>
                     <a href="https://laravel.com/docs/boost" class="hidden text-ink/70 transition hover:text-brand sm:inline dark:text-white/70">Boost</a>
-                    <a href="https://github.com/laravel/laravel"
+                    <a href="{{ route('contact.create') }}"
                        class="rounded-full bg-brand px-4 py-2 text-white shadow-sm transition hover:bg-brand-dark">
-                        Get started
+                        Contact
                     </a>
                 </nav>
             </header>
@@ -46,13 +46,13 @@
                 </p>
 
                 <div class="mt-10 flex flex-wrap items-center gap-4">
-                    <a href="https://laravel.com/docs"
+                    <a href="{{ route('contact.create') }}"
                        class="rounded-full bg-brand px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-brand-dark">
-                        Read the docs
+                        Get in touch
                     </a>
-                    <a href="https://laravel.com/docs/boost"
+                    <a href="https://laravel.com/docs"
                        class="rounded-full border border-ink/15 px-6 py-3 font-semibold text-ink transition hover:border-brand hover:text-brand dark:border-white/20 dark:text-white dark:hover:border-brand dark:hover:text-brand-light">
-                        Explore Boost
+                        Read the docs
                     </a>
                 </div>
 
