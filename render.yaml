@@ -6,7 +6,7 @@
 # docker/entrypoint.sh.
 services:
   - type: web
-    name: laravel-newapp
+    name: copy-studio
     runtime: docker
     plan: free
     dockerfilePath: ./Dockerfile

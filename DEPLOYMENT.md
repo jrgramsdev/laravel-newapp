@@ -6,7 +6,7 @@ running Laravel app for free and share a public URL (e.g. for a recruiter to rev
 ## One-time deploy
 
 1. Create a free account at **https://render.com** and connect your GitHub.
-2. Click **New ▸ Blueprint**, pick the `jrgramsdev/laravel-newapp` repo, and choose
+2. Click **New ▸ Blueprint**, pick the `jrgramsdev/copy-studio` repo, and choose
    the `main` branch. Render reads `render.yaml` and creates a free Docker web service.
 3. Render builds the image (installs Composer + PHP deps, builds the Vite/Tailwind
    assets), then boots it via `docker/entrypoint.sh`, which runs migrations and starts
@@ -42,7 +42,7 @@ That URL is what you send to a recruiter — it serves the real app, backend and
 ## Run the production image locally (optional)
 
 ```bash
-docker build -t laravel-newapp .
-docker run --rm -p 8000:8000 laravel-newapp
+docker build -t copy-studio .
+docker run --rm -p 8000:8000 copy-studio
 # open http://127.0.0.1:8000
 ```

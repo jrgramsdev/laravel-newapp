@@ -20,7 +20,7 @@
                     <span>{{ config('app.name', 'Laravel') }}</span>
                 </a>
                 <nav class="flex items-center gap-6 text-sm font-medium">
-                    <a href="https://github.com/jrgramsdev/laravel-newapp" class="hidden text-ink/70 transition hover:text-brand sm:inline dark:text-white/70">Source</a>
+                    <a href="https://github.com/jrgramsdev/copy-studio" class="hidden text-ink/70 transition hover:text-brand sm:inline dark:text-white/70">Source</a>
                     <a href="{{ route('contact.create') }}" class="hidden text-ink/70 transition hover:text-brand sm:inline dark:text-white/70">Contact</a>
                     <a href="{{ url('/studio') }}"
                        class="rounded-full bg-brand px-4 py-2 text-white shadow-sm transition hover:bg-brand-dark">
@@ -52,7 +52,7 @@
                        class="rounded-full bg-brand px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-brand-dark">
                         Open the Studio
                     </a>
-                    <a href="https://github.com/jrgramsdev/laravel-newapp"
+                    <a href="https://github.com/jrgramsdev/copy-studio"
                        class="rounded-full border border-ink/15 px-6 py-3 font-semibold text-ink transition hover:border-brand hover:text-brand dark:border-white/20 dark:text-white dark:hover:border-brand dark:hover:text-brand-light">
                         Read the source
                     </a>
@@ -71,7 +71,7 @@
                             [
                                 'title' => 'A swappable provider',
                                 'body' => 'The LLM sits behind a one-method interface with a deterministic fake, so every failure path is testable offline and the app runs with no API key.',
-                                'href' => 'https://github.com/jrgramsdev/laravel-newapp#the-provider-abstraction',
+                                'href' => 'https://github.com/jrgramsdev/copy-studio#the-provider-abstraction',
                                 'cta' => 'How it works',
                             ],
                             [

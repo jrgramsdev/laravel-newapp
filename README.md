@@ -89,8 +89,8 @@ UI never polls a generation that has silently stopped moving.
 On macOS, [Laravel Herd](https://herd.laravel.com) bundles PHP + Composer.
 
 ```bash
-git clone https://github.com/jrgramsdev/laravel-newapp.git
-cd laravel-newapp
+git clone https://github.com/jrgramsdev/copy-studio.git
+cd copy-studio
 
 composer install
 npm install
