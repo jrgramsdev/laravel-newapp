@@ -4,7 +4,7 @@ A **Laravel 13 / Vue 3** application built to demonstrate full-stack work end to
 a queued **AI copy generator** for e-commerce products, plus a hand-rolled auth area
 and validated forms — no starter kit, no scaffolding.
 
-**▶ Live demo: [laravel-newapp.onrender.com](https://laravel-newapp.onrender.com/)**
+**▶ Live demo: [copystudio.joshuagrams.com](https://copystudio.joshuagrams.com/)**
 &nbsp;·&nbsp; **Deploy your own:** [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ![Landing page](docs/screenshot.png)
