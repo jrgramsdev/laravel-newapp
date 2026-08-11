@@ -7,7 +7,7 @@
     <title>{{ config('app.name') }} — AI product copy</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-neutral-50 text-ink antialiased">
+<body class="bg-neutral-50 text-ink antialiased dark:bg-ink dark:text-white">
     <div id="app"></div>
 </body>
 </html>

@@ -39,7 +39,7 @@ async function submit() {
     <div class="space-y-10">
         <section>
             <h1 class="text-xl font-semibold tracking-tight">Add a product</h1>
-            <p class="mt-1 text-sm text-neutral-600">
+            <p class="mt-1 text-sm text-neutral-600 dark:text-white/60">
                 Give it a name — a source URL and notes make the generated copy more specific.
             </p>
 
@@ -52,21 +52,21 @@ async function submit() {
                         type="text"
                         required
                         placeholder="Ceramic pour-over dripper"
-                        class="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
+                        class="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-white/20 dark:bg-white/5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
                     />
                     <p v-if="fieldErrors.name" class="mt-1 text-sm text-red-600">{{ fieldErrors.name[0] }}</p>
                 </div>
 
                 <div>
                     <label for="source_url" class="block text-sm font-medium">
-                        Source URL <span class="font-normal text-neutral-500">(optional)</span>
+                        Source URL <span class="font-normal text-neutral-500 dark:text-white/50">(optional)</span>
                     </label>
                     <input
                         id="source_url"
                         v-model="form.source_url"
                         type="url"
                         placeholder="https://supplier.example.com/item/1234"
-                        class="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
+                        class="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-white/20 dark:bg-white/5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
                     />
                     <p v-if="fieldErrors.source_url" class="mt-1 text-sm text-red-600">
                         {{ fieldErrors.source_url[0] }}
@@ -75,14 +75,14 @@ async function submit() {
 
                 <div>
                     <label for="notes" class="block text-sm font-medium">
-                        Notes <span class="font-normal text-neutral-500">(optional)</span>
+                        Notes <span class="font-normal text-neutral-500 dark:text-white/50">(optional)</span>
                     </label>
                     <textarea
                         id="notes"
                         v-model="form.notes"
                         rows="3"
                         placeholder="Materials, dimensions, who it's for — anything the copy should mention."
-                        class="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
+                        class="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-white/20 dark:bg-white/5 text-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
                     ></textarea>
                     <p v-if="fieldErrors.notes" class="mt-1 text-sm text-red-600">{{ fieldErrors.notes[0] }}</p>
                 </div>
@@ -98,26 +98,26 @@ async function submit() {
         </section>
 
         <section>
-            <h2 class="text-sm font-semibold tracking-tight uppercase text-neutral-500">Products</h2>
+            <h2 class="text-sm font-semibold tracking-tight uppercase text-neutral-500 dark:text-white/50">Products</h2>
 
-            <p v-if="store.error" class="mt-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
+            <p v-if="store.error" class="mt-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/40 dark:text-red-300">
                 {{ store.error }}
             </p>
 
-            <p v-if="store.loading" class="mt-3 text-sm text-neutral-500">Loading…</p>
+            <p v-if="store.loading" class="mt-3 text-sm text-neutral-500 dark:text-white/50">Loading…</p>
 
-            <p v-else-if="!store.products.length" class="mt-3 text-sm text-neutral-500">
+            <p v-else-if="!store.products.length" class="mt-3 text-sm text-neutral-500 dark:text-white/50">
                 No products yet. Add one above to generate copy for it.
             </p>
 
-            <ul v-else class="mt-3 divide-y divide-neutral-200 rounded-lg border border-neutral-200 bg-white">
+            <ul v-else class="mt-3 divide-y divide-neutral-200 rounded-lg border border-neutral-200 bg-white dark:divide-white/10 dark:border-white/10 dark:bg-white/5">
                 <li v-for="product in store.products" :key="product.id">
                     <RouterLink
                         :to="{ name: 'products.show', params: { id: product.id } }"
-                        class="flex items-center justify-between px-4 py-3 hover:bg-neutral-50"
+                        class="flex items-center justify-between px-4 py-3 hover:bg-neutral-50 dark:hover:bg-white/5"
                     >
                         <span class="text-sm font-medium">{{ product.name }}</span>
-                        <span class="text-xs text-neutral-500">
+                        <span class="text-xs text-neutral-500 dark:text-white/50">
                             {{ product.generations.length }}
                             {{ product.generations.length === 1 ? 'generation' : 'generations' }}
                         </span>

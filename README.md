@@ -9,6 +9,10 @@ and validated forms — no starter kit, no scaffolding.
 
 ![Landing page](docs/screenshot.png)
 
+*The studio — pick a content type, the job queues, the UI polls until the copy lands:*
+
+![The copy studio](docs/studio.png)
+
 ---
 
 ## What's here

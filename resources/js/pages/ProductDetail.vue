@@ -30,7 +30,7 @@ async function remove() {
 <template>
     <div v-if="product" class="space-y-8">
         <div>
-            <RouterLink :to="{ name: 'products.index' }" class="text-sm text-neutral-500 hover:text-ink">
+            <RouterLink :to="{ name: 'products.index' }" class="text-sm text-neutral-500 dark:text-white/50 hover:text-ink dark:hover:text-white">
                 ← All products
             </RouterLink>
 
@@ -46,13 +46,13 @@ async function remove() {
                     >
                         {{ product.source_url }}
                     </a>
-                    <p v-if="product.notes" class="mt-2 max-w-prose text-sm text-neutral-600">
+                    <p v-if="product.notes" class="mt-2 max-w-prose text-sm text-neutral-600 dark:text-white/60">
                         {{ product.notes }}
                     </p>
                 </div>
 
                 <button
-                    class="shrink-0 rounded-md border border-neutral-300 px-3 py-1.5 text-sm text-neutral-700 hover:bg-neutral-50"
+                    class="shrink-0 rounded-md border border-neutral-300 px-3 py-1.5 text-sm text-neutral-700 dark:text-white/70 hover:bg-neutral-50 dark:hover:bg-white/5"
                     @click="remove"
                 >
                     Delete
@@ -61,27 +61,27 @@ async function remove() {
         </div>
 
         <section>
-            <h2 class="text-sm font-semibold uppercase tracking-tight text-neutral-500">Generate</h2>
+            <h2 class="text-sm font-semibold uppercase tracking-tight text-neutral-500 dark:text-white/50">Generate</h2>
             <div class="mt-3 flex flex-wrap gap-2">
                 <button
                     v-for="type in TYPES"
                     :key="type.value"
-                    class="rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-sm hover:border-brand hover:text-brand"
+                    class="rounded-md border border-neutral-300 bg-white dark:border-white/20 dark:bg-white/5 px-3 py-1.5 text-sm hover:border-brand hover:text-brand"
                     @click="store.generate(product.id, type.value)"
                 >
                     {{ type.label }}
                 </button>
             </div>
 
-            <p v-if="store.error" class="mt-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
+            <p v-if="store.error" class="mt-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/40 dark:text-red-300">
                 {{ store.error }}
             </p>
         </section>
 
         <section>
-            <h2 class="text-sm font-semibold uppercase tracking-tight text-neutral-500">History</h2>
+            <h2 class="text-sm font-semibold uppercase tracking-tight text-neutral-500 dark:text-white/50">History</h2>
 
-            <p v-if="!product.generations.length" class="mt-3 text-sm text-neutral-500">
+            <p v-if="!product.generations.length" class="mt-3 text-sm text-neutral-500 dark:text-white/50">
                 Nothing generated yet. Pick a content type above.
             </p>
 
@@ -95,9 +95,9 @@ async function remove() {
         </section>
     </div>
 
-    <p v-else-if="store.error" class="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
+    <p v-else-if="store.error" class="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/40 dark:text-red-300">
         {{ store.error }}
     </p>
 
-    <p v-else class="text-sm text-neutral-500">Loading…</p>
+    <p v-else class="text-sm text-neutral-500 dark:text-white/50">Loading…</p>
 </template>
