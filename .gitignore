@@ -27,3 +27,6 @@ Homestead.yaml
 Thumbs.db
 
 /.omc
+
+# bundled Laravel Boost rule docs (generic boilerplate)
+.claude/skills/
