@@ -85,7 +85,7 @@ UI never polls a generation that has silently stopped moving.
 
 ## Running it
 
-**Prerequisites:** PHP 8.3+, Composer, Node 18+.
+**Prerequisites:** PHP 8.4+, Composer, Node 18+.
 On macOS, [Laravel Herd](https://herd.laravel.com) bundles PHP + Composer.
 
 ```bash
