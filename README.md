@@ -154,6 +154,15 @@ Content types: `product_description`, `ad_copy`, `title_variants`, `seo_meta`.
 | Tests | PHPUnit + Pint, run in CI |
 | Deploy | Docker + Render blueprint (`render.yaml`) |
 
+### Deployment note
+
+Render's free tier has no separate background-worker service, so the queue worker
+runs inside the web container (`docker/entrypoint.sh`) under a restart loop — a
+worker that died silently would leave every generation stuck at `queued`. Web and
+worker share one SQLite file, so the connection runs in WAL mode with a busy
+timeout instead of the default rollback journal, where one writer blocks the other
+outright.
+
 ## Tests
 
 ```bash

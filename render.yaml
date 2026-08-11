@@ -1,5 +1,9 @@
 # Render Blueprint — https://render.com/docs/blueprint-spec
 # Deploys the Laravel app as a free Docker web service.
+#
+# Render's free tier has no separate background-worker service, so the queue
+# worker runs inside this container alongside the web process — see
+# docker/entrypoint.sh.
 services:
   - type: web
     name: laravel-newapp
@@ -9,6 +13,8 @@ services:
     healthCheckPath: /
     autoDeploy: true
     envVars:
+      - key: APP_NAME
+        value: Copy Studio
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
@@ -18,9 +24,26 @@ services:
         # Render dashboard for stable sessions. If left unset, the container
         # generates a fresh key on each boot — fine for a demo.
         sync: false
+
       - key: DB_CONNECTION
         value: sqlite
+      # The web process and the queue worker share one SQLite file; WAL plus a
+      # busy timeout keeps concurrent writes from erroring out.
+      - key: DB_JOURNAL_MODE
+        value: WAL
+      - key: DB_BUSY_TIMEOUT
+        value: "5000"
+
       - key: SESSION_DRIVER
+        value: database
+      - key: QUEUE_CONNECTION
         value: database
       - key: LOG_CHANNEL
         value: stderr
+
+      # The demo runs the deterministic fake provider so it works with no
+      # credentials and costs nothing. To generate real copy, set LLM_DRIVER to
+      # "anthropic" and add ANTHROPIC_API_KEY in the Render dashboard — never
+      # commit a key here.
+      - key: LLM_DRIVER
+        value: fake
