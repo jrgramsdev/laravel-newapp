@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router';
                     <span class="inline-block size-2.5 rounded-full bg-brand"></span>
                     <span class="text-sm font-semibold tracking-tight">Merchant Copy Studio</span>
                 </RouterLink>
-                <span class="text-xs text-neutral-500">AI product content for storefronts</span>
+                <a href="/" class="text-xs text-neutral-500 transition hover:text-brand">← Back to site</a>
             </div>
         </header>
 
